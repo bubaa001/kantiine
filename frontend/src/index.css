@@ -1,0 +1,125 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --brand-red: #E60000;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: #000000;
+  color: #FFFFFF;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom scrollbar for horizontal categories */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Card styles matching screenshots */
+.food-card {
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), 
+              box-shadow 0.2s cubic-bezier(0.4, 0.0, 0.2, 1);
+  background: #121212;
+  border: 1px solid #1F1F1F;
+}
+
+.food-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.3), 
+              0 4px 6px -4px rgb(0 0 0 / 0.3);
+}
+
+.category-circle {
+  transition: all 0.2s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+.category-circle.active {
+  border-color: #E60000;
+  box-shadow: 0 0 0 3px rgba(230, 0, 0, 0.2);
+}
+
+/* Bottom nav active state */
+.bottom-nav-item {
+  transition: all 0.1s ease;
+}
+
+.bottom-nav-item.active {
+  color: #E60000;
+}
+
+.bottom-nav-item.active svg {
+  stroke: #E60000;
+  fill: none;
+}
+
+/* Button styles */
+.btn-primary {
+  background-color: #E60000;
+  color: white;
+  font-weight: 600;
+  padding: 14px 32px;
+  border-radius: 9999px;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 6px -1px rgb(230 0 0 / 0.2);
+}
+
+.btn-primary:hover {
+  background-color: #CC0000;
+  transform: translateY(-1px);
+  box-shadow: 0 10px 15px -3px rgb(230 0 0 / 0.3);
+}
+
+.btn-primary:active {
+  transform: scale(0.985);
+}
+
+/* Order tabs */
+.order-tab {
+  padding: 8px 20px;
+  border-radius: 9999px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  border: 1px solid #333;
+}
+
+.order-tab.active {
+  background-color: #E60000;
+  color: white;
+  border-color: #E60000;
+}
+
+/* Empty state icon */
+.empty-icon {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+/* Toast customization */
+.go7002119888 {
+  background: #121212 !important;
+  color: #fff !important;
+  border: 1px solid #333 !important;
+}
+
+/* Modal animation */
+@keyframes slide-up {
+  from { transform: translateY(40px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+.animate-slide-up {
+  animation: slide-up 0.25s cubic-bezier(0.32, 0.72, 0, 1);
+}
